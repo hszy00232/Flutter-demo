@@ -13,12 +13,13 @@ class OnePage extends StatelessWidget {
         child: Text("Jump TwoRoute"),
         onPressed: () {
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => TwoPage(),
-                settings: RouteSettings(
-                    arguments: PassArguments("Data from OnePage Build")),
-              ));
+            context,
+            MaterialPageRoute(
+              builder: (context) => TwoPage(),
+              settings: RouteSettings(
+                  arguments: PassArguments("Data from OnePage Build")),
+            ),
+          );
         },
       ),
     );

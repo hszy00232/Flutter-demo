@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/widget/doubanmovie/indexPage.dart';
 import 'package:flutter_demo/widget/route-arguments/onePage.dart';
 // import 'package:flutter_demo/widget/route-nesting/articleListPage.dart';
 import 'package:flutter_demo/widget/route-nesting/firstScreen.dart';
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 // 路由名称
-const routerName = ["TabBar实现页面切换", "路由实现页面跳转", "路由带参数跳转", "路由嵌套"];
+const routerName = ["TabBar实现页面切换", "路由实现页面跳转", "路由带参数跳转", "路由嵌套", "豆瓣影评"];
 // 路由
 Map<String, WidgetBuilder> routers = {
   "widget/tabbar": (context) {
@@ -106,5 +107,8 @@ Map<String, WidgetBuilder> routers = {
   "widget/route-nesting": (context) {
     // return new ArticleListPage();
     return new FirstScreen();
+  },
+  "widget/doubanmovie": (context) {
+    return new IndexPage();
   }
 };
