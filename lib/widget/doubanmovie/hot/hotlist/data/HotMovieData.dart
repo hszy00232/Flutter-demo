@@ -75,6 +75,29 @@ class HotMovieData {
 
     hotMovieData.directors = directors;
 
+    hotMovieData.images = Avatars(movieDataJson['images']['small'],
+        movieDataJson['images']['large'], movieDataJson['images']['medium']);
+
+    hotMovieData.id = movieDataJson['id'];
+
     return hotMovieData;
+  }
+
+  String getCasts() {
+    String castsString = "";
+    for (Cast cast in casts) {
+      castsString += cast.name;
+      castsString += '/';
+    }
+    return castsString.substring(0, castsString.length - 1);
+  }
+
+  String getDirectors() {
+    String directorsString = "";
+    for (Cast cast in directors) {
+      directorsString += cast.name;
+      directorsString += '/';
+    }
+    return directorsString.substring(0, directorsString.length - 1);
   }
 }

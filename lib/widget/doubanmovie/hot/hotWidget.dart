@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/widget/doubanmovie/citys/citysWidget.dart';
+import 'package:flutter_demo/widget/doubanmovie/hot/hotlist/HotMoviesListWidget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HotWidget extends StatefulWidget {
@@ -18,6 +19,7 @@ class HotWidgetState extends State<HotWidget> {
 
   @override
   Widget build(BuildContext context) {
+    print('切换' + curCity);
     // TODO: implement build
     if (curCity != null && curCity.isNotEmpty) {
       return Column(
@@ -85,9 +87,7 @@ class HotWidgetState extends State<HotWidget> {
                     child: Container(
                       child: TabBarView(
                         children: <Widget>[
-                          Center(
-                            child: Text('正在热映'),
-                          ),
+                          HotMoviesListWidget(curCity),
                           Center(
                             child: Text('即将上映'),
                           )
