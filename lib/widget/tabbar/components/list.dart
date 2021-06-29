@@ -22,21 +22,31 @@ class _NewListState extends State<NewList> {
 
   @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
-      itemCount: data == null ? 0 : data.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Container(
-          child: ListTile(
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage(horseUrl),
-            ),
-            title: Text(data[index]["title"]),
-            subtitle: Text(data[index]["body"]),
-            trailing: Icon(Icons.keyboard_arrow_right),
-            onTap: () => _onTap(data[index]["id"].toString()),
-          ),
-        );
-      },
+    /**
+     * ListView 类提供构建器itemBuilder
+     * itemBuilder 有两个参数 BuildContext 和 行迭代器index
+     * index 迭代器从0开始，在每次调用该函数时递增
+     */
+    return _buildList();
+  }
+
+  Widget _buildList() {
+    return ListView.builder(
+        itemCount: data == null ? 0 : data.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            child: _buildRow(data[index]),
+          );
+        });
+  }
+
+  Widget _buildRow(dataItem) {
+    return ListTile(
+      leading: CircleAvatar(backgroundImage: NetworkImage(horseUrl)),
+      title: Text(dataItem['title']),
+      subtitle: Text(dataItem["body"]),
+      trailing: Icon(Icons.keyboard_arrow_right),
+      onTap: () => _onTap(dataItem['id'].toString()),
     );
   }
 
