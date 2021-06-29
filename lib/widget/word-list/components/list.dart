@@ -1,35 +1,12 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
-class WordList extends StatefulWidget {
-  @override
-  _WordListState createState() => _WordListState();
-}
-
-class _WordListState extends State<WordList> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("随机文字列表"),
-      ),
-      body: Container(
-        child: Builder(
-          builder: (BuildContext context) {
-            final _suggestions = <WordPair>[];
-            return _buildSuggestion(_suggestions);
-          },
-        ),
-      ),
-    );
-  }
-}
-
 Widget _buildSuggestion(List<WordPair> suggestions) {
   return ListView.builder(itemBuilder: (BuildContext _context, int _index) {
     if (_index.isOdd) {
       return Divider();
     }
+
     // 将_index除以2并返回整数结果
     // 比如1，2，3，4，5返回0，1，1，2，2
     // 用于计算ListView中减去分隔部件后的实际单词对数量
