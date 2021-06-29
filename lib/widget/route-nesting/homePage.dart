@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
           title: Text("Home"),
         ),
         body: Center(
-          child: RaisedButton(
+          child: ElevatedButton(
             child: Text("demo1"),
             onPressed: () {
               Navigator.pushNamed(context, 'demo1');

@@ -20,10 +20,10 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     var bottomNavigationBar = BottomNavigationBar(
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.school), title: Text('热映')),
+        BottomNavigationBarItem(icon: Icon(Icons.school), label: "热映"),
         BottomNavigationBarItem(
-            icon: Icon(Icons.panorama_fish_eye), title: Text('找片')),
-        BottomNavigationBarItem(icon: Icon(Icons.people), title: Text('我的')),
+            icon: Icon(Icons.panorama_fish_eye), label: "找片"),
+        BottomNavigationBarItem(icon: Icon(Icons.people), label: "我的"),
       ],
       currentIndex: _selectedIndex,
       fixedColor: Colors.black,

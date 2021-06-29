@@ -19,8 +19,7 @@ class HotWidgetState extends State<HotWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print('切换' + curCity);
-    // TODO: implement build
+    // print('切换' + curCity);
     if (curCity != null && curCity.isNotEmpty) {
       return Column(
         children: <Widget>[
